@@ -47,12 +47,15 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    // coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
 
+    // room
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
 
     // network & serialization
     implementation("com.google.code.gson:gson:2.9.0")
@@ -61,4 +64,7 @@ dependencies {
 
     // work manager
     implementation("androidx.work:work-runtime-ktx:2.7.1")
+
+    // coroutines
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:1.5.2")
 }
