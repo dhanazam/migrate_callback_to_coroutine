@@ -47,7 +47,7 @@ class MainViewModel(private val repository: TitleRepository): ViewModel(){
 //        }
 //    }
 
-    fun updateTaps() {
+    private fun updateTaps() {
         viewModelScope.launch {
             tapCount++
             delay(3_000)
@@ -73,7 +73,7 @@ class MainViewModel(private val repository: TitleRepository): ViewModel(){
 //        })
 //    }
 
-    fun refreshTitle() {
+    private fun refreshTitle() {
         viewModelScope.launch {
             try {
                 _spinner.value = true
