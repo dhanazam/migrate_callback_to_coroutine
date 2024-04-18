@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dhanazam.migrate_callback_to_coroutine.util.BACKGROUND
 import com.dhanazam.migrate_callback_to_coroutine.util.singleArgViewModelFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -15,10 +14,10 @@ class MainViewModel(private val repository: TitleRepository): ViewModel(){
         val Factory = singleArgViewModelFactory(::MainViewModel)
     }
 
-    private val _snackbar = MutableLiveData<String?>()
+    private val _snackBar = MutableLiveData<String?>()
 
-    val snackbar: LiveData<String?>
-        get() = _snackbar
+    val snackBar: LiveData<String?>
+        get() = _snackBar
 
     val title = repository.title
 
@@ -56,7 +55,7 @@ class MainViewModel(private val repository: TitleRepository): ViewModel(){
     }
 
     fun onSnackbarShown() {
-        _snackbar.value = null
+        _snackBar.value = null
     }
 
 //    private fun refreshTitle() {
@@ -79,7 +78,7 @@ class MainViewModel(private val repository: TitleRepository): ViewModel(){
                 _spinner.value = true
                 repository.refreshTitle()
             } catch (error: TitleRefreshError) {
-                _snackbar.value = error.message
+                _snackBar.value = error.message
             } finally {
                 _spinner.value = false
             }
