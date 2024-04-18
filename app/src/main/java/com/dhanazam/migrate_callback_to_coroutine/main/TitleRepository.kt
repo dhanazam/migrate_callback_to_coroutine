@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
-class TitleRepository(val network: MainNetwork, val titleDao: TitleDao) {
+class TitleRepository(private val network: MainNetwork, private val titleDao: TitleDao) {
 
     val title: LiveData<String?> = titleDao.titleLiveData.map { it?.title }
 
